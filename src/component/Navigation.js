@@ -5,6 +5,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import {Link} from "react-router-dom";
+import movieIcon from "./movieIcon.png"
 // import { logOut } from '../reducers/users/actions';
 // import { sortCarsViaSearchBar } from "../reducers/cars/actions"
 import "./Navigation.css"
@@ -48,7 +49,7 @@ function Navigation() {
         <>
        <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"> {/*https://mdbootstrap.com/snippets/jquery/ascensus/1727054#html-tab-view*/ }
          <div className="logo">
-            <img className="logo-img" src ="./images/AppLogo.png" height="80px" width="100px"></img>
+            <img className="logo-img" src ={movieIcon} height="80px" width="100px"></img>
          </div>
          <div className="nav-items">
             { <li className="admin-name">{"Welcome Admin"}</li>}
