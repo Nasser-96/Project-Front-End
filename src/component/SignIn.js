@@ -19,10 +19,6 @@ function SignIn() {
   
   // [Saad]: GET request via Axios (email&pass)
   const loginClick = () => {
-    let userInfo = {email: email, password: password}
-
-    // ---------------------3-------------------
-      console.log('login clicked')
       let data = JSON.stringify({
         email: email,
         password: password
@@ -47,9 +43,12 @@ function SignIn() {
             <div className="sign-in-div">
             <h1 id="titleid">Sign In</h1>
             <hr/>
-              <input onChange={getUserEmail} type="email" id="email" name="email" placeholder="Email"/>  
+              <label htmlFor="email">Email</label>
+              <input onChange={getUserEmail} type="email" id="email" name="email" />  
               <br/>
-              <input onChange={getPassword} type="password" id="password" name="password" placeholder="Password"/>
+              <label htmlFor="password">Password</label>
+              <input onChange={getPassword} type="password" id="password" name="password"/>
+              <br/>
               <br/>
               <button  onClick={loginClick} type="button" className="btn btn-success" id="btnColor">Login</button>
             </div>
