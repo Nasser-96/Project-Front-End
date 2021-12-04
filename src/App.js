@@ -5,6 +5,7 @@ import SignIn from './component/SignIn';
 import AvailableMovies from './component/AvailableMovies';
 import MovieInfo from './component/MovieInfo';
 import Admin from './component/Admin';
+import SignUp from './component/SignUp';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/Sign-In" element={<SignIn/>} />
+        <Route path="/Sign-Up" element={<SignUp/>} />
         <Route path="/Available-Movies" element={<AvailableMovies/>} />
         <Route path="/Available-Movies/:movieName" element={<MovieInfo/>} />
         <Route path="/Admin" element={<Admin/>}/>
