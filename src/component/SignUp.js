@@ -7,6 +7,7 @@ function SignUp(){
   const[confirmPassword,setConfirmPassword] = useState("")
   const[email,setEmail] = useState("")
   const[name,setName] = useState("")
+  const[age,setAge] = useState("")
 
   const[passwordErrorMsg,setPasswordErrorMsg] = useState("")
   const[emailErrorMsg,setEmailErrorMsg] = useState("")
@@ -19,6 +20,8 @@ const getEmail= (e) => {setEmail(e.target.value)}
 
 const getName= (e) => {setName(e.target.value)}
 
+const getAge= (e) => {setAge(e.target.value)}
+
 const CheckPassword= (e)=>{
   if(password !== confirmPassword)
   {
@@ -28,8 +31,11 @@ const CheckPassword= (e)=>{
   }
   else{
       let data = JSON.stringify({
+        name:name,
         email: email,
         password: password,
+        role:"user",
+        age:age
       })
       axios.post('http://localhost:8080/users', data, {
           headers: {
@@ -62,6 +68,10 @@ return(
               <br/>
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input  onChange={getConfirmPassword} type="password" id="confirmPassword" name="confirmPassword" placeholder={passwordErrorMsg}/>
+              <br/>
+              <label htmlFor="age">Your Age</label>
+              <input  onChange={getAge} type="number" id="age" name="age"/>
+              <br/>
               <br/>
               <br/>
               <button onClick={CheckPassword} type="button" className="btn btn-success" id="btnColor" >Sign Up</button>

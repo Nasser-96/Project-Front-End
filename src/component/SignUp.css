@@ -19,7 +19,7 @@
   background-color:#fff
 }
 
-input[type=text], #password,#confirmPassword, input[type=email],input[type=UserName] {
+input[type=text], #password,#confirmPassword,#age, input[type=email],input[type=UserName] {
   width: 100%;
   padding: 5px;
   margin: 5px 0 2px 0;
