@@ -1,6 +1,7 @@
 .adminPage{
-    margin: 7rem;
+    margin: 8rem;
     display: grid;
+    row-gap: 50px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
