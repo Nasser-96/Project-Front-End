@@ -1,8 +1,20 @@
+import {useDispatch, useSelector} from "react-redux"
 import { useState } from "react"
 import axios from "axios";
+import {logIn} from "../reducers/users/actions"
 import "./SignIn.css"
- 
+
 function SignIn() {
+
+  const dispatch = useDispatch();
+  const state = useSelector((state)=>{
+    console.log("-----------------")
+    console.log(state.usersReducer)
+    console.log("-----------------")
+    return{
+      userIsLogedIn: state.usersReducer
+    }
+  });
 
   const[email, setEmail] = useState("")
   const[password,setPassword] = useState("")
@@ -32,7 +44,8 @@ function SignIn() {
       .then(
         function(res)
         {
-          console.log(res)
+          dispatch(logIn(res.data))
+          console.log(res.data)
         }
         )
       .catch(function(err){console.log(err.response.data)})
@@ -51,6 +64,7 @@ function SignIn() {
               <br/>
               <br/>
               <button  onClick={loginClick} type="button" className="btn btn-success" id="btnColor">Login</button>
+              {console.log(state.userIsLogedIn.extendUser.email)}
             </div>
       </div>
     );
