@@ -1,22 +1,9 @@
-// import {useDispatch, useSelector} from "react-redux"
 import { useState } from "react"
 import axios from "axios";
-// import { useNavigate } from 'react-router-dom';
-// import {logIn} from "../reducers/users/actions"
 import "./SignIn.css"
  
 function SignIn() {
 
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const state = useSelector((state)=>{
-  //   // console.log("-----------------")
-  //   // console.log(state.usersReducer)
-  //   // console.log("-----------------")
-  //   return{
-  //     userIsLogedIn: state.usersReducer
-  //   }
-  // });
   const[email, setEmail] = useState("")
   const[password,setPassword] = useState("")
 
@@ -53,51 +40,7 @@ function SignIn() {
         }
         )
       .catch(function(err){console.log(err.response.data)})
-  
-
-    // --------------------2 -------------------
-    // axios({
-    //   method: 'get',
-    //   url:'http://localhost:8080/users/login',
-    //   headers: {}, 
-    //   data: 
-    //     {
-    //       email:"s@s.com",
-    //       password:"123"
-    //   }
-      
-    // })
-    // .then(
-    //   function(res)
-    //   {
-    //     console.log(res)
-    //   }
-    //   )
-    // .catch(function(err){console.log(err)})
-
-    // ----------------------------1 ---------------
-    // axios.get('http://localhost:8080/users')
-    // .then(
-    //   function(res)
-    //   {
-    //     console.log(res)
-    //   }
-    //   )
-    // .catch(function(err){console.log(err)})
-    // navigate("/Admin")
   } 
-
-  // after clicking the Login button the dispatch will send the user info (email,password) to the reducer to check it
-  // const loginClick = () => {
-  //   let userInfo = {email: userMail, pass: password}
-  //   const action = logIn(userInfo)
-  //   dispatch(action)
-  //   if(userInfo.email === "a@a.com" && userInfo.pass === "123"){
-  //     navigate("/Admin")
-  //   }else {
-  //     navigate("/")
-  //   }
-  // } 
     return (
       < div className="Sign-In">
 
