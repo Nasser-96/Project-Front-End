@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import axios from "axios";
 import React, { useEffect, useState } from 'react';
 
 import "./Admin.css"
@@ -13,9 +14,21 @@ function Admin (){
     const [availableMovies , setAvailableMovies] = useState(0); 
     const [tickets , setTickets] = useState(0); 
     
-    // useEffect(() => {
-        // here The API requert to get all data
-    // },[]);
+    useEffect(() => {
+        
+        axios.get('http://localhost:8080/api/getAdminPageData')
+        .then(
+            function(res)
+            {
+                setUser(res.data.users)
+                setMovies(res.data.movies)
+                setRooms(res.data.rooms)
+                setAvailableMovies(res.data.availableMovies)
+                setTickets(res.data.tickets)
+            }
+            )
+        .catch(function(err){console.log(err)})
+    },[]);
 
     return(
         <>
