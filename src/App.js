@@ -6,6 +6,8 @@ import AvailableMovies from './component/AvailableMovies';
 import MovieInfo from './component/MovieInfo';
 import Admin from './component/Admin';
 import SignUp from './component/SignUp';
+import Users from './component/Users';
+import Movies from './component/Movies';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/Available-Movies" element={<AvailableMovies/>} />
         <Route path="/Available-Movies/:movieName" element={<MovieInfo/>} />
         <Route path="/Admin" element={<Admin/>}/>
+        <Route path="/Users" element={<Users/>}/>
+        <Route path="/Movies" element={<Movies/>}/>
       </Routes>
     </div>
   );
