@@ -1,0 +1,15 @@
+.adminPage{
+    margin: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.texts{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.imgStyle{
+    width: 10rem;
+}
