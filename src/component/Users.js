@@ -27,6 +27,7 @@ function Users(){
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Age</th>
               </tr>
             </thead>
             {result.map(e=>{
@@ -36,6 +37,7 @@ function Users(){
                   <td>{e.id}</td>
                   <td>{e.name}</td>
                   <td>{e.email}</td>
+                  <td>{e.age}</td>
                 </tr>
               </tbody>
               )

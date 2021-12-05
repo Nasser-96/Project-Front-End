@@ -24,9 +24,11 @@ function Movies(){
               <tr>
               <th>ID</th>
                 <th>Name</th>
+                <th>Description</th>
+                <th>Rating</th>
                 <th>Type</th>
-                <th>description</th>
                 <th>minimum_age</th>
+                <th>Trailer</th>
               </tr>
             </thead>
             {movies.map(e=>{
@@ -35,9 +37,11 @@ function Movies(){
                 <tr>
                   <td>{e.id}</td>
                   <td>{e.name}</td>
-                  <td>{e.type}</td>
                   <td>{e.description}</td>
+                  <td>{e.rating}</td>
+                  <td>{e.type}</td>
                   <td>{e.minimum_age}</td>
+                  <td>{e.trailer}</td>
                 </tr>
               </tbody>
               )
