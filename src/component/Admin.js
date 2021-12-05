@@ -53,13 +53,13 @@ function Admin (){
 
                 <div>
                     <div className="texts">Available Movies</div>
-                    <Link to="/Available-movies"><input type="image" src="https://cdn-icons-png.flaticon.com/512/4088/4088121.png" className="imgStyle"/></Link>
+                    <Link to="/Admin-Available-Movies"><input type="image" src="https://cdn-icons-png.flaticon.com/512/4088/4088121.png" className="imgStyle"/></Link>
                     <h3>{availableMovies}</h3>
                 </div>
 
                 <div>
                     <div className="texts">Tickets</div>
-                    <Link to="/Tickets"><input type="image" src="https://static.thenounproject.com/png/415558-200.png" className="imgStyle"/></Link>
+                    <Link to="/Admin-Tickets"><input type="image" src="https://static.thenounproject.com/png/415558-200.png" className="imgStyle"/></Link>
                     <h3>{tickets}</h3>
                 </div>
                 
