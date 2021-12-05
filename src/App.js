@@ -8,6 +8,7 @@ import Admin from './component/Admin';
 import SignUp from './component/SignUp';
 import Users from './component/Users';
 import Movies from './component/Movies';
+import Rooms from './component/Rooms';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Admin" element={<Admin/>}/>
         <Route path="/Users" element={<Users/>}/>
         <Route path="/Movies" element={<Movies/>}/>
+        <Route path="/Rooms" element={<Rooms/>}/>
       </Routes>
     </div>
   );
