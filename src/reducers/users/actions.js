@@ -5,7 +5,7 @@ export const logIn = (user)=> {
     };
 };
 
-export const signUP = (user)=>{
+export const signUp = (user)=>{
     return{
         type:"SIGN_UP",
         payload:user
