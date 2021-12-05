@@ -23,9 +23,9 @@ function Rooms(){
             <thead>
               <tr>
               <th>ID</th>
-                <th>Type</th>
                 <th>Num_seats</th>
-             
+                <th>Type</th>
+                
               </tr>
             </thead>
             {rooms.map(e=>{
@@ -33,8 +33,8 @@ function Rooms(){
                 <tbody>
                 <tr>
                   <td>{e.id}</td>
+                  <td>{e.num_seats}</td>
                   <td>{e.type}</td>
-                  <td>{e.Num_seats}</td>
                 </tr>
               </tbody>
               )
