@@ -18,9 +18,9 @@ function Rooms(){
     return(
         <>
 <div className="tableInfo">
-<div className="gridHead">
-            <h1 className="numOfMovies">{rooms.length} Movies: </h1>
-            <input type="button" value="Add Room" className="btnAdd" onClick={()=>navigate("Create")}/>
+        <div className="gridHead">
+          <h1 className="numOfMovies">{rooms.length} Rooms: </h1>
+          <input type="button" value="Add Room" className="btnAdd" onClick={()=>navigate("Create")}/>
         </div>
         <Table striped bordered hover>
             <thead>
