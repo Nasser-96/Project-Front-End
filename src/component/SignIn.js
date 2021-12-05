@@ -3,9 +3,11 @@ import { useState } from "react"
 import axios from "axios";
 import {logIn} from "../reducers/users/actions"
 import "./SignIn.css"
+import { useNavigate } from "react-router";
 
 function SignIn() {
 
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const state = useSelector((state)=>{
     console.log("-----------------")
@@ -45,10 +47,17 @@ function SignIn() {
         function(res)
         {
           dispatch(logIn(res.data))
-          console.log(res.data)
+          if(res.data.role==="Admin"){
+            navigate("/Admin")
+          }
+          else{
+            navigate("/")
+          }
         }
         )
       .catch(function(err){console.log(err.response.data)})
+      
+
   } 
     return (
       < div className="Sign-In">
@@ -64,7 +73,7 @@ function SignIn() {
               <br/>
               <br/>
               <button  onClick={loginClick} type="button" className="btn btn-success" id="btnColor">Login</button>
-              {console.log(state.userIsLogedIn.extendUser.email)}
+              {console.log(state.userIsLogedIn.extendUser.password)}
             </div>
       </div>
     );
