@@ -1,0 +1,16 @@
+.gridHead{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8rem;
+    /* align-content:center; */
+    /* width: 20rem; */
+}
+
+.numOfMovies{
+    text-align: left;
+}
+
+.btnAdd{
+    justify-self:right;
+    width: 6rem;
+}
