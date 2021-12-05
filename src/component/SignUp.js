@@ -1,7 +1,11 @@
+import {useDispatch, useSelector} from "react-redux"
 import { useState } from "react"
+import {signUp} from "../reducers/users/actions"
 import axios from "axios"
 import "./SignUp.css"
 function SignUp(){
+
+  const dispatch = useDispatch();
 
   const[password,setPassword] = useState("")
   const[confirmPassword,setConfirmPassword] = useState("")
@@ -46,6 +50,7 @@ const CheckPassword= (e)=>{
       .then(
         function(res)
         {
+          dispatch(signUp(res.data))
           console.log(res)
         }
         )
