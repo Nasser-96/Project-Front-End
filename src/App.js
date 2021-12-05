@@ -9,6 +9,9 @@ import SignUp from './component/SignUp';
 import Users from './component/Users';
 import Movies from './component/Movies';
 import Home from './component/Home';
+import AdminAvailableMovies from './component/AdminAvailableMovies';
+import AdminTickets from './component/AdminTickets';
+import UserTickets from './component/UserTickets';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/Admin" element={<Admin/>}/>
         <Route path="/Users" element={<Users/>}/>
         <Route path="/Movies" element={<Movies/>}/>
+        <Route path="Admin-Available-Movies" element={<AdminAvailableMovies/>}/>
+        <Route path="/Admin-Tickets" element={<AdminTickets/>}/>
+        <Route path="/My-Tickets"element={<UserTickets/>}/>
       </Routes>
     </div>
   );

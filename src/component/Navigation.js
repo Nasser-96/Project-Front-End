@@ -37,11 +37,12 @@ function Navigation() {
             {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Users">Users</Link></li>}
             {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Movies">Movies</Link></li>}
             {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Rooms">Rooms</Link></li>}
-            {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Tickets">Tickets</Link></li>}
+            {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Admin-Tickets">Tickets</Link></li>}
+            {(state.userIsLogedIn.extendUser.role ==="Admin") &&<li><Link to= "/Admin-Available-Movies">Available Movies</Link></li>}
             {/* for users */}
             {(state.userIsLogedIn.extendUser.role !=="Admin") && <li><Link to= "/">Home</Link></li>}
             {(state.userIsLogedIn.extendUser.role !=="Admin") && <li><Link to= "/About">About Us</Link></li>}
-            {<li><Link to= "/Available-Movies">Available Movies</Link></li>}
+            { state.userIsLogedIn.extendUser.role !=="Admin"&&<li><Link to= "/Available-Movies">Available Movies</Link></li>}
             {((state.userIsLogedIn.isLogedIn || state.userIsLogedIn.extendUser.role ==="user")&& state.userIsLogedIn.extendUser.role !=="Admin")&&<li><Link to= "/My-Tickets">My Tickets</Link></li>}
             {state.userIsLogedIn.isLogedIn && <li onClick={logOutUser}><Link to= "/">Logout</Link></li>}
 
