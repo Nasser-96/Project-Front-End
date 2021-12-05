@@ -14,6 +14,7 @@ import AdminAvailableMovies from './component/AdminAvailableMovies';
 import AdminTickets from './component/AdminTickets';
 import UserTickets from './component/UserTickets';
 import CreateMovie from './component/CreateMovie';
+import CreateRoom from './component/CreateRoom';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/Admin-Tickets" element={<AdminTickets/>}/>
         <Route path="/My-Tickets"element={<UserTickets/>}/>
         <Route path="/Movies/Create" element={<CreateMovie/>}/>
+        <Route path="/Rooms/Create" element={<CreateRoom/>}/>
       </Routes>
     </div>
   );
