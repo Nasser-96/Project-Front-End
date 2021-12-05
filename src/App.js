@@ -8,12 +8,14 @@ import Admin from './component/Admin';
 import SignUp from './component/SignUp';
 import Users from './component/Users';
 import Movies from './component/Movies';
+import Home from './component/Home';
 
 function App() {
   return (
     <div className="App">
       <Navigation />
       <Routes>
+        <Route path="/" element={<Home/>}/>
         <Route path="/Sign-In" element={<SignIn/>} />
         <Route path="/Sign-Up" element={<SignUp/>} />
         <Route path="/Available-Movies" element={<AvailableMovies/>} />

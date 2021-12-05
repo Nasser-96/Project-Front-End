@@ -1,6 +1,8 @@
 #Email::placeholder {color: red;} 
 #password::placeholder {color: red;} 
 #confirmPassword::placeholder {color: red;} 
+#age::placeholder {color: red;} 
+#UserName::placeholder {color: red;} 
 
 
 .Sign-Up{
