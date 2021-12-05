@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { Table } from 'react-bootstrap';
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./AvailableMovies.css"
+import "./Movies.css"
+import { useNavigate } from "react-router";
 
 function Movies(){
 
     const [movies , setMovies] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios
@@ -19,6 +21,10 @@ function Movies(){
     return(
         <>
     <div className="tableInfo">
+        <div className="gridHead">
+            <h1 className="numOfMovies">{movies.length} Movies: </h1>
+            <input type="button" value="Add Movie" className="btnAdd" onClick={()=>navigate("Create")}/>
+        </div>
         <Table striped bordered hover>
             <thead>
               <tr>
