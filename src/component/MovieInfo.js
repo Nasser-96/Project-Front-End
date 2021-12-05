@@ -1,48 +1,60 @@
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux"
 import { useParams } from "react-router"
 import { useState,useEffect } from "react";
 import axios from "axios";
 import "./MovieInfo.css"
+import { Button } from 'react-bootstrap';
 
 function MovieInfo(info){
-    const {movieName} = useParams();
-    const [availableMovies, setAvailableMovies] = useState([])
+
+    const dispatch = useDispatch();
+    const state = useSelector((state)=>{
+    return{
+        userIsLogedIn: state.usersReducer
+    }
+    });
+
+    const {AvailableMovies_id} = useParams();
+    const [availableMovies, setAvailableMovies] = useState()
 
 
     useEffect(() => {
         axios
-          .get("http://localhost:8080/available_movies")
+          .get(`http://localhost:8080/available_movies/${AvailableMovies_id}`)
           .then((response) => setAvailableMovies(response.data))
           .catch((error) => console.log(error));
       },[]);
 
     
-    const filtrationOfMovie = availableMovies.filter(e=>e.movie.name === movieName)
+
+    // const checkIfLogedIn = ()=>{
+    //     if(!state.userIsLogedIn.isLogedIn)
+    //     {
+    //         alert("You have to Login")
+    //     }
+    //     else{
+    //         console.log(state.userIsLogedIn.extendUser.id)
+    //         // console.log()
+    //         alert("Seccesusfuly Added to Ticket")
+    //     }
+    // }
+
     return(
-        <>
-        {filtrationOfMovie.map(e=>{
-            
-            return(
                 <>
-                <div className="movieDetCard">
-                    <iframe width="600" height="315"
-                        src={`https://www.youtube.com/embed/${e.movie.trailer}`} className="part1OfCard"/ >
-                    {/* </iframe> */}
+                { availableMovies == undefined ? "" : <div className="movieDetCard">
+                    <iframe width="600" height="315" src={`https://www.youtube.com/embed/${availableMovies.movie.trailer}`} className="part1OfCard"/ >
                     <div >
-                        <input type={"image"} src={e.movie.img} className="imgSize"/>
-                        <div className="des">{e.movie.name}</div>
-                        <div>{e.movie.description}</div>
-                        <div>{e.movie.rating}</div>
-                        <div>{e.movie.type}</div>
-                        <div> Minimum Age: {e.movie.minimum_age}</div>
-                        <div>Price: {e.price}SR</div>
-                        <input type="button" value="Add To Ticket" className="btnCard"/>
+                        <input type={"image"} src={availableMovies.movie.img} className="imgSize"/>
+                        <div className="des">{availableMovies.movie.name}</div>
+                        <div>{availableMovies.movie.description}</div>
+                        <div>{availableMovies.movie.rating}</div>
+                        <div>{availableMovies.movie.type}</div>
+                        <div> Minimum Age: {availableMovies.movie.minimum_age}</div>
                     </div>
-                </div>
+                </div>}
+
                 </>
-            )
-        })}
-        </>
+
     )
 }
 
