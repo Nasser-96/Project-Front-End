@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import { useEffect } from "react"
+import { useNavigate } from "react-router"
 
 
 function CreateAvailableMovie(){
@@ -11,6 +12,7 @@ function CreateAvailableMovie(){
     const [rooms ,setRooms] = useState([])
     const [price , setPrice] = useState([])
 
+    const navigate = useNavigate()
     
     useEffect(() => {
         axios
@@ -35,7 +37,7 @@ function CreateAvailableMovie(){
       const GetAvailableInfo = ()=>{
         axios.post("http://localhost:8080/available_movies",availableMovieInfo)
         .then(response=>{
-            console.log(response.data);
+            navigate("/Admin-Available-Movies")
         })
     }
 
@@ -49,7 +51,7 @@ function CreateAvailableMovie(){
                 <select name="cars" id="age" onChange={(e)=>{setMovieId(e.target.value)}}>
                     <option></option>
                     {movies.map(e=>{
-                        return(<option value={e.id}>{e.id}-{e.name}</option>)
+                        return(<option value={e.id}>{e.name}</option>)
                     })}
                 </select>  
                 <br/>
@@ -57,7 +59,7 @@ function CreateAvailableMovie(){
                 <select name="cars" id="age" onChange={(e)=>{setRoomId(e.target.value)}}>
                 <option></option>
                     {rooms.map(e=>{
-                        return(<option value={e.id}>{e.id}-{e.type}</option>)
+                        return(<option value={e.id}>{e.type}</option>)
                     })}
                 </select>
                 <label htmlFor="MinimumAge">Price</label>

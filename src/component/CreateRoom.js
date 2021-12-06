@@ -1,10 +1,12 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router"
 
 function CreateRoom(){
 
     const [type , setType] = useState()
     const [numOfSeats , setNumOfSeats] = useState()
+    const navigate = useNavigate()
 
     const roomInfo = {
         "type":type,
@@ -14,7 +16,7 @@ function CreateRoom(){
     const GetRoomInfo = ()=>{
         axios.post("http://localhost:8080/rooms",roomInfo)
         .then(response=>{
-            console.log(response.data);
+            navigate("/Rooms")
         })
     }
 
