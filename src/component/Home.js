@@ -8,21 +8,21 @@ function Home(){
 
     useEffect(() => {
         axios
-          .get(`http://localhost:8080/available_movies`)
+          .get(`http://localhost:8080/movies`)
           .then((response) => setAvailableMovies(response.data))
           .catch((error) => console.log(error));
       },[]);
     return(
         
         <>
-            <h1 className="head">Watch Now: </h1>
+            <h1 className="head">Movies List: </h1>
             <br/>
             <br/>
             <div className="movieGrid">
                 {availableMovies.map(e=>{
                     return(
                         <>
-                            <input type="image" src={e.movie.img} className="imgMargin"/>
+                            <input type="image" src={e.img} className="imgMargin"/>
                         </>
                     )
                 })}

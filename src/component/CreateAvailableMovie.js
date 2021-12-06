@@ -11,6 +11,7 @@ function CreateAvailableMovie(){
     const [movies, setMovies] = useState([])
     const [rooms ,setRooms] = useState([])
     const [price , setPrice] = useState([])
+    const [date ,setDate] =useState()
 
     const navigate = useNavigate()
     
@@ -29,9 +30,10 @@ function CreateAvailableMovie(){
       },[]);
 
       const availableMovieInfo={
-          "price":price,
-          "movie":{"id":movieId},
-          "room":{"id":roomId}
+            "date":date,
+            "price":price,
+            "movie":{"id":movieId},
+            "room":{"id":roomId}
       }
 
       const GetAvailableInfo = ()=>{
@@ -47,7 +49,7 @@ function CreateAvailableMovie(){
             <div className="createMovie">
                 <h1 id="titleid">Add New Available Movie</h1>
                 <hr/>
-                <label htmlFor="MinimumAge">Movie ID</label>
+                <label htmlFor="MinimumAge">Movie </label>
                 <select name="cars" id="age" onChange={(e)=>{setMovieId(e.target.value)}}>
                     <option></option>
                     {movies.map(e=>{
@@ -55,15 +57,19 @@ function CreateAvailableMovie(){
                     })}
                 </select>  
                 <br/>
-                <label htmlFor="MinimumAge">Room ID</label>
+                <label htmlFor="MinimumAge">Room</label>
                 <select name="cars" id="age" onChange={(e)=>{setRoomId(e.target.value)}}>
                 <option></option>
                     {rooms.map(e=>{
                         return(<option value={e.id}>{e.type}</option>)
                     })}
                 </select>
-                <label htmlFor="MinimumAge">Price</label>
-                <input   type="number" id="age" onChange={(e)=>{setPrice(e.target.value)}} /> 
+                <br/>
+                <label htmlFor="MinimumAge">Price</label>s
+                <input   type="number" id="age" onChange={(e)=>{setPrice(e.target.value)}} />
+                <be/>
+                <label htmlFor="MinimumAge">Date</label>
+                <input   type="date" id="age" onChange={(e)=>{setDate(e.target.value)}} />
                 <br/>
                 <br/>
                 <br/>
