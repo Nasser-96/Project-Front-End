@@ -68,6 +68,7 @@ function MovieInfo(info){
                         <div>{availableMovies.movie.rating}</div>
                         <div>{availableMovies.movie.type}</div>
                         <div> Minimum Age: {availableMovies.movie.minimum_age}</div>
+                        <div>Show Date: {availableMovies.date}</div>
                     </div>
                     <Button onClick={checkIfLogedIn} variant="success">Add to My Ticket</Button>
                 </div>}
