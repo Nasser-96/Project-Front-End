@@ -1,0 +1,16 @@
+.head{
+    margin-top: 6rem;
+}
+
+.movieGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    margin: 1rem;
+}
+
+.imgMargin{
+    margin:1rem ;
+    width: 15rem;
+}
