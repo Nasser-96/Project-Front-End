@@ -30,6 +30,7 @@ function AvailableMovies() {
                         <div>Movie Rating: {e.movie.rating}</div>  
                         <div className="btnDiv">
                             <h1>{e.id}</h1>
+                            <div>Show Date: {e.date}</div>
                             <Link to={`/Available-Movies/${e.id}`} ><Button variant="secondary">More Info</Button></Link>                     
                         </div>
                     </div>
