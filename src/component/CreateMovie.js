@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router"
 import "./CreateMovie"
 
 function CreateMovie(){
@@ -10,6 +11,7 @@ function CreateMovie(){
     const [age, setAge] = useState()
     const [image, setImage] = useState()
     const [trailer, setTrailer] = useState()
+    const navigate = useNavigate()
 
     const movieInfo ={
         
@@ -27,7 +29,7 @@ function CreateMovie(){
     const GetMovieInfo = ()=>{
         axios.post("http://localhost:8080/movies",movieInfo)
         .then(response=>{
-            console.log(response.data);
+            navigate("/Movies")
         })
     }
 
