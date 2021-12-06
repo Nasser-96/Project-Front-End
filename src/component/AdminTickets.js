@@ -9,7 +9,7 @@ function AdminTickets(){
 
     useEffect(() => {
         axios
-          .get("http://localhost:8080/adminTickets")
+          .get("http://localhost:8080/tickets")
           .then((response) => setAdminTickets(response.data))
           .catch((error) => console.log(error));
       },[]);
@@ -24,6 +24,8 @@ function AdminTickets(){
               <th>ID</th>
                 <th>Movie_room</th>
                 <th>User_id</th>
+                <th>Status</th>
+                <th>Action</th>
 
               </tr>
             </thead>
@@ -32,8 +34,9 @@ function AdminTickets(){
                 <tbody>
                 <tr>
                   <td>{e.id}</td>
-                  <td>{e.movie_room}</td>
-                  <td>{e.user_id}</td>
+                  <td>{e.movie_room.id}</td>
+                  <td>{e.user.id}</td>
+
                 </tr>
               </tbody>
               )
