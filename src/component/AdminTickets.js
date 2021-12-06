@@ -80,7 +80,8 @@ function AdminTickets(){
               <tr>
               <th>ID</th>
                 <th>Movie_room</th>
-                <th>User_id</th>
+                <th>User Id</th>
+                <th>User Name</th>
                 <th>Status</th>
                 <th>Action</th>
 
@@ -93,6 +94,7 @@ function AdminTickets(){
                   <td>{e.id}</td>
                   <td>{e.movie_room.id}</td>
                   <td>{e.user.id}</td>
+                  <td>{e.user.name}</td>
                   <td>{e.status}</td>
                   <td>
                     { e.status !== "Pending" ? "" : 
