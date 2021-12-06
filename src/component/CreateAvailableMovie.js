@@ -73,7 +73,7 @@ function CreateAvailableMovie(){
                 <br/>
                 <br/>
                 <br/>
-                <button  type="button" className="btn btn-success" id="btnColor" onClick={GetAvailableInfo}>Add Room</button>
+                <button  type="button" className="btn btn-success" id="btnColor" onClick={GetAvailableInfo}>Add Available Movie</button>
             </div>
         </div>
         </>
