@@ -15,11 +15,9 @@ function Users(){
           .catch((error) => console.log(error));
       },[]);
 
-      const result = users.filter((element) => {return (element.role !== "Admin")})
     
     return(
         <>
-        {console.log(result)}
     <div className="tableInfo">
         <Table striped bordered hover>
             <thead>
@@ -28,9 +26,10 @@ function Users(){
                 <th>Name</th>
                 <th>Email</th>
                 <th>Age</th>
+                <th>Role</th>
               </tr>
             </thead>
-            {result.map(e=>{
+            {users.map(e=>{
                 return(
                 <tbody>
                 <tr>
@@ -38,6 +37,7 @@ function Users(){
                   <td>{e.name}</td>
                   <td>{e.email}</td>
                   <td>{e.age}</td>
+                  <td>{e.role}</td>
                 </tr>
               </tbody>
               )
