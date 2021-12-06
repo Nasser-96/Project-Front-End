@@ -34,9 +34,16 @@ function MovieInfo(info){
             navigate("/Sign-In")
         }
         else{
-            console.log(availableMovies.id)
-            console.log(state.userIsLogedIn.extendUser.id)
-            // --------------------------------
+            if(state.userIsLogedIn.extendUser.age < availableMovies.movie.minimum_age)
+            {
+                console.log("!!!!!!!!!")
+                console.log("Your Age:"+state.userIsLogedIn.extendUser.age+" Is Belwo than Minimum Age")
+                
+                console.log("!!!!!!!!!")
+
+            }
+            else{
+// --------------------------------
                 let data = JSON.stringify({
                     movie_room: {id:availableMovies.id},
                     user: {id:state.userIsLogedIn.extendUser.id},
@@ -57,6 +64,9 @@ function MovieInfo(info){
                 .catch(function(err){console.log(err)})
             // --------------------------------
             navigate("/Available-Movies")
+            }
+            
+            
         }
     }
 
