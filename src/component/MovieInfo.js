@@ -37,7 +37,8 @@ function MovieInfo(info){
             // --------------------------------
                 let data = JSON.stringify({
                     movie_room: {id:availableMovies.id},
-                    user: {id:state.userIsLogedIn.extendUser.id}
+                    user: {id:state.userIsLogedIn.extendUser.id},
+                    status:"Pending"
                 })
                 axios.post('http://localhost:8080/tickets', data, {
                     headers: {
