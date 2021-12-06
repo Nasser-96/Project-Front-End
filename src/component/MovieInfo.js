@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux"
 import { useParams } from "react-router"
 import { useState,useEffect } from "react";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import "./MovieInfo.css"
 import { Button } from 'react-bootstrap';
 
@@ -25,19 +25,37 @@ function MovieInfo(info){
           .catch((error) => console.log(error));
       },[]);
 
-    
 
-    // const checkIfLogedIn = ()=>{
-    //     if(!state.userIsLogedIn.isLogedIn)
-    //     {
-    //         alert("You have to Login")
-    //     }
-    //     else{
-    //         console.log(state.userIsLogedIn.extendUser.id)
-    //         // console.log()
-    //         alert("Seccesusfuly Added to Ticket")
-    //     }
-    // }
+    const checkIfLogedIn = ()=>{
+        if(!state.userIsLogedIn.isLogedIn)
+        {
+            alert("You have to Login")
+        }
+        else{
+            console.log(availableMovies.id)
+            console.log(state.userIsLogedIn.extendUser.id)
+            // --------------------------------
+                let data = JSON.stringify({
+                    movie_room: {id:availableMovies.id},
+                    user: {id:state.userIsLogedIn.extendUser.id}
+                })
+                axios.post('http://localhost:8080/tickets', data, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+                )
+                .then(
+                    function(res)
+                    {
+                        console.log(res)
+                    }
+                    )
+                .catch(function(err){console.log(err)})
+            // --------------------------------
+            alert("Seccesusfuly Added to Ticket")
+        }
+    }
 
     return(
                 <>
@@ -51,6 +69,7 @@ function MovieInfo(info){
                         <div>{availableMovies.movie.type}</div>
                         <div> Minimum Age: {availableMovies.movie.minimum_age}</div>
                     </div>
+                    <Button onClick={checkIfLogedIn} variant="success">Add to My Ticket</Button>
                 </div>}
 
                 </>
