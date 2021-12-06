@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { useState,useEffect } from "react";
 import axios, { Axios } from "axios";
 import "./MovieInfo.css"
@@ -17,6 +17,8 @@ function MovieInfo(info){
     const {AvailableMovies_id} = useParams();
     const [availableMovies, setAvailableMovies] = useState()
 
+    const navigate= useNavigate()
+
 
     useEffect(() => {
         axios
@@ -29,7 +31,7 @@ function MovieInfo(info){
     const checkIfLogedIn = ()=>{
         if(!state.userIsLogedIn.isLogedIn)
         {
-            alert("You have to Login")
+            navigate("/Sign-In")
         }
         else{
             console.log(availableMovies.id)
@@ -54,7 +56,7 @@ function MovieInfo(info){
                     )
                 .catch(function(err){console.log(err)})
             // --------------------------------
-            alert("Seccesusfuly Added to Ticket")
+            navigate("/Available-Movies")
         }
     }
 

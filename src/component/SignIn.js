@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 
 function SignIn() {
 
+  const [wrongEmail, setWrongEmail] = useState("")
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const state = useSelector((state)=>{
@@ -55,18 +56,20 @@ function SignIn() {
           }
         }
         )
-      .catch(function(err){console.log(err.response.data)})
+      .catch(function(err){setWrongEmail(err.response.data) })
       
 
   } 
     return (
+      <>
       < div className="Sign-In">
 
             <div className="sign-in-div">
             <h1 id="titleid">Sign In</h1>
             <hr/>
               <label htmlFor="email">Email</label>
-              <input onChange={getUserEmail} type="email" id="email" name="email" />  
+              <input onChange={getUserEmail} type="email" id="email" name="email" />
+              
               <br/>
               <label htmlFor="password">Password</label>
               <input onChange={getPassword} type="password" id="password" name="password"/>
@@ -75,7 +78,11 @@ function SignIn() {
               <button  onClick={loginClick} type="button" className="btn btn-success" id="btnColor">Login</button>
               {console.log(state.userIsLogedIn.extendUser.password)}
             </div>
+            {/* <span><strong>{wrongEmail}</strong></span> */}
       </div>
+        
+      
+      </>
     );
   }
   
